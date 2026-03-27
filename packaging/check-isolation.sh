@@ -11,11 +11,6 @@ if [[ ! -d "$claude_dir" || ! -d "$codex_dir" ]]; then
   exit 1
 fi
 
-if [[ -f "$claude_dir/agents/openai.yaml" ]]; then
-  echo "Claude bundle contains Codex agents metadata" >&2
-  exit 1
-fi
-
 if find "$claude_dir" -path "*/agents/openai.yaml" | grep -q .; then
   echo "Claude bundle contains Codex agents metadata" >&2
   exit 1

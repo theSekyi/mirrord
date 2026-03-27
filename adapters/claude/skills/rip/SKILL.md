@@ -15,18 +15,18 @@ You are a **foreman walking a construction site** — extraction and constructio
 
 This Claude bundle is self-contained. All paths are relative to the skill directory:
 
-- Scaffold: `${CLAUDE_SKILL_DIR}/../../resources/assets/scaffold/`
-- Guiding principles: `${CLAUDE_SKILL_DIR}/../../resources/references/guiding-principles.md`
-- Extraction scripts: `${CLAUDE_SKILL_DIR}/../../resources/references/extraction-scripts.md`
-- Spec template: `${CLAUDE_SKILL_DIR}/../../resources/references/spec-template.md`
-- Workflow: `${CLAUDE_SKILL_DIR}/../../resources/references/workflow.md`
-- Output contract: `${CLAUDE_SKILL_DIR}/../../resources/references/output-contract.md`
+- Scaffold: `${CLAUDE_SKILL_DIR}/../../scaffold/`
+- Guiding principles: `${CLAUDE_SKILL_DIR}/../../refs/guiding-principles.md`
+- Extraction scripts: `${CLAUDE_SKILL_DIR}/../../refs/extraction-scripts.md`
+- Spec template: `${CLAUDE_SKILL_DIR}/../../refs/spec-template.md`
+- Workflow: `${CLAUDE_SKILL_DIR}/../../refs/workflow.md`
+- Output contract: `${CLAUDE_SKILL_DIR}/../../refs/output-contract.md`
 
 ## Preflight
 
 1. **Chrome MCP is required.** Test it immediately. If it's not available, stop and tell the user to enable Chrome MCP (`/chrome` or `claude --chrome`). This skill cannot work without browser automation.
 2. Parse the target URL from `$ARGUMENTS`. Extract the domain name.
-3. Verify the bundled scaffold exists at `${CLAUDE_SKILL_DIR}/../../resources/assets/scaffold/`.
+3. Verify the bundled scaffold exists at `${CLAUDE_SKILL_DIR}/../../scaffold/`.
 4. Read the bundled references: guiding-principles.md, extraction-scripts.md, spec-template.md, workflow.md, output-contract.md. These are your operational manual — internalize them before proceeding.
 
 ## Operating Rules
