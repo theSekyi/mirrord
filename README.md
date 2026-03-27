@@ -23,24 +23,38 @@ Requires a browser automation backend.
 
 ## Use
 
-```
-/clone-site https://example.com
-```
+### Claude Code
 
-This will:
+1. Open Claude Code in any directory where you want the clone created
+2. Make sure Chrome is running and Chrome MCP is active (`/chrome` if not)
+3. Run:
+   ```
+   /clone-site https://example.com
+   ```
+
+### Codex
+
+1. Open Codex in any directory where you want the clone created
+2. Run:
+   ```
+   /clone-site https://example.com
+   ```
+
+### What happens
+
+mirrord will:
 1. Create `example-com-clone/` in your current directory
 2. Crawl all public pages (max 50, depth 3)
 3. Extract shared Navbar/Footer and design tokens
 4. Build every page with real Next.js App Router routes
 5. Wire navigation with real links — no `href="#"`
 
-## What You Get
-
-A standalone Next.js 16 project. Run it with:
+### Run the output
 
 ```bash
 cd example-com-clone
 npm run dev
+# Opens at http://localhost:3000
 ```
 
 ## Requirements
