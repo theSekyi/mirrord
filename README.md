@@ -1,37 +1,66 @@
 # mirrord
 
-Website cloning engine with separate Claude and Codex runtime bundles.
-
-## Model
-
-- `core/` holds shared scaffold, references, and helpers.
-- `adapters/claude/` is Claude-only.
-- `adapters/codex/` is Codex-only.
-- `dist/` contains generated install artifacts.
-
-Do not install the repository root into either product.
-
-## Build
-
-```bash
-./packaging/build-bundles.sh
-./packaging/check-isolation.sh
-```
+Clone any website — all pages, real navigation, pixel-perfect.
 
 ## Install
 
-Claude:
-- local checked install: `./packaging/install-claude.sh`
-- published install target: release [`dist/claude`](/Users/emmanuel/mirrord/dist/claude) as a standalone Claude plugin bundle
-- requires a browser MCP server such as Chrome DevTools MCP to already be configured in Claude
+### Claude Code
 
-Codex:
-- checked local install: `./packaging/install-codex.sh`
-- installs [`dist/codex/clone-site`](/Users/emmanuel/mirrord/dist/codex/clone-site) into `~/.codex/skills/clone-site/`
-- requires `codex`, `node`, `git`, and a browser automation backend
+```
+/plugin install github:theSekyi/mirrord --path dist/claude
+```
 
-## Rules
+Requires Chrome MCP. Enable it once with `/chrome` in Claude Code.
 
-- keep `core/` agent-agnostic
-- keep adapters isolated from each other
-- treat `dist/` as generated output only
+### Codex
+
+```bash
+git clone https://github.com/theSekyi/mirrord.git
+cp -r mirrord/dist/codex/clone-site ~/.codex/skills/clone-site
+```
+
+Requires a browser automation backend.
+
+## Use
+
+```
+/clone-site https://example.com
+```
+
+This will:
+1. Create `example-com-clone/` in your current directory
+2. Crawl all public pages (max 50, depth 3)
+3. Extract shared Navbar/Footer and design tokens
+4. Build every page with real Next.js App Router routes
+5. Wire navigation with real links — no `href="#"`
+
+## What You Get
+
+A standalone Next.js 16 project. Run it with:
+
+```bash
+cd example-com-clone
+npm run dev
+```
+
+## Requirements
+
+- Node.js 18+
+- Git
+- Browser automation (Chrome MCP for Claude, browser backend for Codex)
+
+---
+
+## For Contributors
+
+The repo has three layers:
+
+- `core/` — shared scaffold, extraction scripts, spec templates (agent-agnostic)
+- `adapters/claude/` and `adapters/codex/` — platform-specific skill files
+- `dist/` — generated install bundles (built by `./packaging/build-bundles.sh`)
+
+Do not install the repo root into either product. Only `dist/claude/` and `dist/codex/clone-site/` are runtime artifacts.
+
+## License
+
+MIT
