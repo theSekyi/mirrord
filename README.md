@@ -7,7 +7,8 @@ Clone any website — all pages, real navigation, pixel-perfect.
 ### Claude Code
 
 ```
-/plugin install github:theSekyi/mirrord --path dist/claude
+/plugin marketplace add theSekyi/mirrord
+/plugin install mirrord@theSekyi-mirrord
 ```
 
 Requires Chrome MCP. Enable it once with `/chrome` in Claude Code.
