@@ -4,11 +4,7 @@
   "plugins": [
     {
       "name": "mirrord",
-      "source": {
-        "source": "git-subdir",
-        "url": "https://github.com/theSekyi/mirrord.git",
-        "path": "dist/claude"
-      }
+      "source": "./dist/claude"
     }
   ]
 }
