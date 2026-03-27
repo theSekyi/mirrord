@@ -20,7 +20,7 @@ This repository produces two separate runtime artifacts from one shared source t
 ## Runtime Contract
 
 - Claude consumes `dist/claude/` only.
-- Codex consumes `dist/codex/clone-site/` only.
+- Codex consumes `dist/codex/rip/` only.
 - `packaging/build-bundles.sh` is the only supported way to assemble runtime bundles.
 - `packaging/check-isolation.sh` must pass before release.
 

@@ -1,9 +1,0 @@
-interface:
-  display_name: "Clone Site"
-  short_description: "Clone public websites into Next.js apps"
-  default_prompt: "Use $clone-site to reverse-engineer a public website into a multi-page Next.js clone."
-dependencies:
-  tools:
-    - type: "mcp"
-      value: "browser"
-      description: "Browser automation MCP server for live website crawling and DOM inspection"

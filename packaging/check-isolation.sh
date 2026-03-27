@@ -4,7 +4,7 @@ set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 claude_dir="$repo_root/dist/claude"
-codex_dir="$repo_root/dist/codex/clone-site"
+codex_dir="$repo_root/dist/codex/rip"
 
 if [[ ! -d "$claude_dir" || ! -d "$codex_dir" ]]; then
   echo "Build dist bundles first with ./packaging/build-bundles.sh" >&2

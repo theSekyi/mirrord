@@ -1,11 +1,11 @@
 ---
-name: clone-site
-description: Reverse-engineer and clone an entire public website into an independent multi-page Next.js project. Use this whenever the user wants a website cloned, rebuilt, replicated, or reverse-engineered from its live pages. Provide the target URL as an argument.
+name: rip
+description: Rip any website into a pixel-perfect, multi-page Next.js clone. Discovers all public pages, extracts shared layouts, builds real routes with navigation. Provide the target URL as an argument.
 argument-hint: "<url>"
 user-invocable: true
 ---
 
-# Clone Site
+# Rip Site
 
 Reverse-engineer **$ARGUMENTS** into a pixel-perfect, multi-page, fully navigable Next.js clone.
 

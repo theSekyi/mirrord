@@ -1,9 +1,9 @@
 ---
-name: clone-site
-description: Reverse-engineer and clone public multi-page websites into independent Next.js projects. Use when Codex needs to crawl public pages, extract shared layouts and design tokens, build real routes and navigation, and output a standalone clone from a live website.
+name: rip
+description: Rip any website into a pixel-perfect, multi-page Next.js clone. Crawls public pages, extracts shared layouts and design tokens, builds real routes and navigation, outputs a standalone project.
 ---
 
-# Clone Site
+# Rip Site
 
 Use this skill to clone a public website into a standalone Next.js project.
 

@@ -1,0 +1,9 @@
+interface:
+  display_name: "Rip"
+  short_description: "Rip any website into a Next.js clone"
+  default_prompt: "Use $rip to reverse-engineer a public website into a multi-page Next.js clone."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "browser"
+      description: "Browser automation MCP server for live website crawling and DOM inspection"

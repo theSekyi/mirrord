@@ -16,7 +16,7 @@ Requires Chrome MCP. Enable it once with `/chrome` in Claude Code.
 
 ```bash
 git clone https://github.com/theSekyi/mirrord.git
-cp -r mirrord/dist/codex/clone-site ~/.codex/skills/clone-site
+cp -r mirrord/dist/codex/rip ~/.codex/skills/rip
 ```
 
 Requires a browser automation backend.
@@ -29,7 +29,7 @@ Requires a browser automation backend.
 2. Make sure Chrome is running and Chrome MCP is active (`/chrome` if not)
 3. Run:
    ```
-   /clone-site https://example.com
+   /rip https://example.com
    ```
 
 ### Codex
@@ -37,7 +37,7 @@ Requires a browser automation backend.
 1. Open Codex in any directory where you want the clone created
 2. Run:
    ```
-   /clone-site https://example.com
+   /rip https://example.com
    ```
 
 ### What happens
@@ -73,7 +73,7 @@ The repo has three layers:
 - `adapters/claude/` and `adapters/codex/` — platform-specific skill files
 - `dist/` — generated install bundles (built by `./packaging/build-bundles.sh`)
 
-Do not install the repo root into either product. Only `dist/claude/` and `dist/codex/clone-site/` are runtime artifacts.
+Do not install the repo root into either product. Only `dist/claude/` and `dist/codex/rip/` are runtime artifacts.
 
 ## License
 

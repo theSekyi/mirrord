@@ -3,7 +3,7 @@
 set -euo pipefail
 
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-skill_name="clone-site"
+skill_name="rip"
 dest_root="${CODEX_HOME:-$HOME/.codex}/skills"
 dest_dir="$dest_root/$skill_name"
 browser_pattern="${MIRRORD_CODEX_BROWSER_MCP_PATTERN:-chrome|playwright|browser}"
