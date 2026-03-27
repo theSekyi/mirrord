@@ -1,1 +1,6 @@
-dist/
+# dist/ is committed — it contains the installable plugin bundles
+# Rebuild with: ./packaging/build-bundles.sh
+
+node_modules/
+.DS_Store
+*.swp

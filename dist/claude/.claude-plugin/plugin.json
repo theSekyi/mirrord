@@ -1,0 +1,9 @@
+{
+  "name": "mirrord",
+  "version": "1.1.0",
+  "description": "Claude adapter for the mirrord website cloning engine. Clones public websites into standalone, multi-page Next.js projects.",
+  "author": {
+    "name": "mirrord",
+    "email": "opensource@mirrord.dev"
+  }
+}
