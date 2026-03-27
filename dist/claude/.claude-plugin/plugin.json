@@ -2,8 +2,6 @@
   "name": "mirrord",
   "version": "1.2.0",
   "description": "Rip any website into a pixel-perfect, multi-page Next.js clone.",
-  "author": {
-    "name": "theSekyi"
-  },
-  "skills": ["rip"]
+  "author": { "name": "theSekyi" },
+  "skills": "./skills/"
 }
