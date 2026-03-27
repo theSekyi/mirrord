@@ -1,73 +1,37 @@
 # mirrord
 
-Clone any website — all pages, real navigation, pixel-perfect.
+Website cloning engine with separate Claude and Codex runtime bundles.
 
-A Claude Code plugin that reverse-engineers websites and rebuilds them as fully navigable Next.js clones.
+## Model
+
+- `core/` holds shared scaffold, references, and helpers.
+- `adapters/claude/` is Claude-only.
+- `adapters/codex/` is Codex-only.
+- `dist/` contains generated install artifacts.
+
+Do not install the repository root into either product.
+
+## Build
+
+```bash
+./packaging/build-bundles.sh
+./packaging/check-isolation.sh
+```
 
 ## Install
 
-```
-/plugin install github:theSekyi/mirrord
-```
+Claude:
+- local checked install: `./packaging/install-claude.sh`
+- published install target: release [`dist/claude`](/Users/emmanuel/mirrord/dist/claude) as a standalone Claude plugin bundle
+- requires a browser MCP server such as Chrome DevTools MCP to already be configured in Claude
 
-## Usage
+Codex:
+- checked local install: `./packaging/install-codex.sh`
+- installs [`dist/codex/clone-site`](/Users/emmanuel/mirrord/dist/codex/clone-site) into `~/.codex/skills/clone-site/`
+- requires `codex`, `node`, `git`, and a browser automation backend
 
-```
-/clone-site https://example.com
-```
+## Rules
 
-mirrord will:
-1. Create `example-com-clone/` in your current directory
-2. Crawl all public pages (max 50, depth 3)
-3. Extract shared components (Navbar, Footer) and design tokens
-4. Build every page with real App Router routes
-5. Wire all navigation with `next/link`
-6. Run visual QA on each page
-
-## Requirements
-
-- [Claude Code](https://claude.ai/code) with Chrome MCP enabled
-- Node.js 18+
-- Git
-
-## What You Get
-
-A self-contained Next.js 16 project with:
-- Every public page cloned with pixel-perfect fidelity
-- Real routing — click any nav link and it navigates
-- Active route indicators in the navbar
-- Mobile-responsive navigation (hamburger menu)
-- All assets downloaded (images, videos, fonts, favicons)
-- Component specs as auditable artifacts
-
-## Output Structure
-
-```
-example-com-clone/
-  src/app/
-    layout.tsx          # Shared Navbar + Footer
-    page.tsx            # Homepage
-    about/page.tsx      # /about
-    blog/page.tsx       # /blog
-    blog/[slug]/page.tsx # Dynamic blog posts
-  src/components/
-    shared/             # Navbar, Footer, MobileNav
-    pages/home/         # Homepage sections
-    pages/about/        # About page sections
-  public/images/        # Downloaded assets
-  docs/research/        # Extraction artifacts
-```
-
-## Tech Stack (Output)
-
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16 (App Router) |
-| Language | TypeScript (strict) |
-| UI | React 19 + shadcn/ui |
-| Styling | Tailwind CSS v4 |
-| Deployment | Vercel-ready |
-
-## License
-
-MIT
+- keep `core/` agent-agnostic
+- keep adapters isolated from each other
+- treat `dist/` as generated output only

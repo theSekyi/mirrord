@@ -1,6 +1,0 @@
-{
-  "name": "mirrord",
-  "version": "1.0.0",
-  "description": "Clone any website — discovers all public pages, extracts shared layouts, builds real Next.js routes with navigation, and outputs an independent project. Pixel-perfect, multi-page, fully navigable.",
-  "skills": ["clone-site"]
-}
