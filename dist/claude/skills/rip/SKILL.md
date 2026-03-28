@@ -342,7 +342,14 @@ Every builder receives inline:
 **Don't wait.** Dispatch for Section A while extracting Section B.
 
 #### Step 4: Merge Per-Page
-Merge worktree branches → resolve conflicts → `npm run build`.
+Merge worktree branches → resolve conflicts → `npx tsc --noEmit`.
+
+#### Step 4b: Per-Section Visual Check (DO NOT SKIP)
+After merging each section, **immediately** open the clone page in Chrome MCP at 1440px. Compare the just-built section against its reference screenshot side-by-side. If it doesn't match visually, fix it now — do NOT defer to Phase 8.
+
+Extracted CSS values can be technically correct but visually wrong. A section with `min-h-screen` might look fine on the original at their viewport but create dead space in the clone because the content height differs. The only way to catch this is to look at the rendered output, not trust the CSS.
+
+**This is the single most important quality gate.** Phase 8 is too late — by then you've built everything on top of a bad foundation and fixes cascade. Catching it here is a 10-second fix; catching it in Phase 8 is a debugging session.
 
 ### Dynamic Route Handling
 For template groups (e.g., blog posts):

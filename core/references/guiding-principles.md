@@ -69,3 +69,7 @@ Every builder verifies `npx tsc --noEmit` before finishing. After merges: `npm r
 ## 10. Every Page, Every Link
 
 Every internal `<a href>` becomes a real routed link. Every discovered page gets a real route. The navbar shows which page is active. The user can browse the clone just like the original site.
+
+## 11. Visual Check Per Section, Not Per Page
+
+After building and merging each section, immediately render it in the browser and compare against the original. Do NOT wait until the end for visual QA. Extracted CSS can be technically correct but visually wrong — a class like `min-h-screen` might create dead space in the clone even though the original uses the same class. The only way to catch this is to look at the rendered output. Catching layout issues per-section is a 10-second fix; catching them at the end is a debugging session.
